@@ -2,43 +2,18 @@
 
 using namespace std;
 
-vector<int> bubble_sort(vector<int> v, int calculations)
+vector<int> bubble_sort(vector<int> unsorted)
 {
-    int iterations = 0;
-
-    while (iterations < calculations)
+    for (int i = 0; i < unsorted.size() - 1; i++)
     {
-        for (int i = 0; i < v.size(); i++)
+        int pos = i;
+        for (int j = i + 1; j < unsorted.size(); j++)
         {
-            if (v[i] > v[i + 1])
+            if (unsorted[pos] > unsorted[j])
             {
-                swap(v[i], v[i + 1]);
+                swap(unsorted[pos], unsorted[j]);
             }
         }
-        iterations++;
     }
-    return v;
-}
-
-int main()
-{
-
-    int calc;
-    vector<int> test = {3, 44, 38, 5, 47, 15, 36, 26, 27, 2, 46, 4, 19, 50, 48};
-    cout << "Calculations: ";
-    cin >> calc;
-    vector<int> last = bubble_sort(test, calc);
-
-    for (int t : test)
-    {
-        cout << t << "||";
-    }
-    cout << endl;
-
-    for (int l : last)
-    {
-        cout << l << "||";
-    }
-
-    cout << endl;
+    return unsorted;
 }
