@@ -66,6 +66,20 @@ namespace sorter
                 k++;
             }
         }
+        bool isSorted(vector<int> arr)
+        {
+            int n = arr.size();
+            while (--n > 1)
+                if (arr[n] < arr[n - 1])
+                    return false;
+            return true;
+        }
+
+        void shuffler(vector<int> &a, int n)
+        {
+            for (int i = 0; i < n; i++)
+                swap(a[i], a[rand() % n]);
+        }
     }
     vector<int> bubble_sorter(vector<int> unsorted)
     {
@@ -119,6 +133,13 @@ namespace sorter
             merge_sorter(unsorted, begin, mid);
             merge_sorter(unsorted, mid + 1, end);
             merge(unsorted, begin, mid, end);
+        }
+    }
+    void bogo(vector<int> &unsorted) // Use it for small arrays otherwise you will have to wait more
+    {
+        while (!isSorted(unsorted))
+        {
+            shuffler(unsorted, unsorted.size());
         }
     }
 }
