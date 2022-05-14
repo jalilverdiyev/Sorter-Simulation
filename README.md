@@ -5,5 +5,5 @@
 - Selection Sort
 - Quick Sort
 - Merge Sort
-- Bucket Sort
+- Bogo Sort(just for fun and little arrays)
 ***
