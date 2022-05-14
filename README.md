@@ -5,5 +5,5 @@
 - Selection Sort
 - Quick Sort
 - Merge Sort
-- Heap Sort
+- Bucket Sort
 ***
