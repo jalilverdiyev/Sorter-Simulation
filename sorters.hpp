@@ -135,7 +135,7 @@ namespace sorter
             merge(unsorted, begin, mid, end);
         }
     }
-    void bogo(vector<int> &unsorted) // Use it for small arrays otherwise you will have to wait more
+    void bogo_sorter(vector<int> &unsorted) // Use it for small arrays otherwise you will have to wait more
     {
         while (!isSorted(unsorted))
         {
