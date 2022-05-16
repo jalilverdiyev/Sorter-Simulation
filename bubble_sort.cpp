@@ -2,17 +2,14 @@
 
 using namespace std;
 
-vector<int> bubble_sort(vector<int> unsorted)
+vector<int> bubble_sort(vector<int> unsorted, int i)
 {
-    for (int i = 0; i < unsorted.size() - 1; i++)
+    int pos = i;
+    for (int j = i + 1; j < unsorted.size(); j++)
     {
-        int pos = i;
-        for (int j = i + 1; j < unsorted.size(); j++)
+        if (unsorted[pos] > unsorted[j])
         {
-            if (unsorted[pos] > unsorted[j])
-            {
-                swap(unsorted[pos], unsorted[j]);
-            }
+            swap(unsorted[pos], unsorted[j]);
         }
     }
     return unsorted;

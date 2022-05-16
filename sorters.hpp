@@ -1,7 +1,8 @@
-
+#include "animator.hpp"
 namespace sorter
 {
 #include <bits/stdc++.h>
+#include <windows.h>
     using namespace std;
     namespace
     {
@@ -81,7 +82,7 @@ namespace sorter
                 swap(a[i], a[rand() % n]);
         }
     }
-    vector<int> bubble_sorter(vector<int> unsorted)
+    void bubble_sorter(vector<int> &unsorted)
     {
         for (int i = 0; i < unsorted.size() - 1; i++)
         {
@@ -92,9 +93,11 @@ namespace sorter
                 {
                     swap(unsorted[pos], unsorted[j]);
                 }
+                system("cls");
+                animator::animate(unsorted);
+                Sleep(500);
             }
         }
-        return unsorted;
     }
 
     vector<int> selection_sorter(vector<int> unsorted)
