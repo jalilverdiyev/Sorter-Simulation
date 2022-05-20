@@ -20,7 +20,7 @@ namespace animator
             cout << top_left_corner[i];
             if (int(log10(arr[i]) + 1) > 1)
             {
-                for (int j = 0; j < int(log10(arr[i]) + 2); j++)
+                for (int j = 0; j < (int(log10(arr[i])) + int(log10(arr[i]) + 1)); j++)
                 {
                     cout << top[i];
                 }
@@ -37,7 +37,7 @@ namespace animator
             cout << mid_left[i] << arr[i];
             if (int(log10(arr[i]) + 1) > 1)
             {
-                for (int j = 0; j < int(log10(arr[i])); j++)
+                for (int j = 0; j < (int(log10(arr[i]))); j++)
                 {
                     cout << " ";
                 }
@@ -54,7 +54,7 @@ namespace animator
             cout << bottom_left_corner[i];
             if (int(log10(arr[i]) + 1) > 1)
             {
-                for (int j = 0; j < int(log10(arr[i]) + 2); j++)
+                for (int j = 0; j < (int(log10(arr[i])) + int(log10(arr[i]) + 1)); j++)
                 {
                     cout << bottom[i];
                 }
@@ -65,5 +65,6 @@ namespace animator
             }
             cout << bottom_right_corner[i] << " ";
         }
+        cout << endl;
     }
 }

@@ -6,8 +6,9 @@ using namespace std;
 
 int main()
 {
-    vector<int> test = {3, 44, 38, 5, 47, 15, 36, 26, 27, 2, 46, 4, 19, 50, 48};
-    sorter::bubble_sorter(test);
+    vector<int> test = {400, 5500, 380, 5};
+    int start_index = 0, end_index = (test.size() - 1);
+    sorter::quick_sorter(test, start_index, end_index);
     cout << endl;
     system("pause");
 }

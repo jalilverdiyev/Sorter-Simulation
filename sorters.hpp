@@ -105,6 +105,9 @@ namespace sorter
         for (int i = 0; i < (unsorted.size() - 1); i++)
         {
             int min = i;
+            system("cls");
+            animator::animate(unsorted);
+            Sleep(500);
             for (int j = i + 1; j < unsorted.size(); j++)
             {
                 if (unsorted[j] < unsorted[min])
@@ -114,6 +117,8 @@ namespace sorter
             }
             swap(unsorted[min], unsorted[i]);
         }
+        system("cls");
+        animator::animate(unsorted);
         return unsorted;
     }
 
@@ -122,7 +127,9 @@ namespace sorter
         if (start < end)
         {
             int pi = partitions(unsorted, start, end);
-
+            system("cls");
+            animator::animate(unsorted);
+            Sleep(1000);
             quick_sorter(unsorted, start, pi - 1);
             quick_sorter(unsorted, pi + 1, end);
         }
@@ -136,6 +143,9 @@ namespace sorter
             merge_sorter(unsorted, begin, mid);
             merge_sorter(unsorted, mid + 1, end);
             merge(unsorted, begin, mid, end);
+            system("cls");
+            animator::animate(unsorted);
+            Sleep(1000);
         }
     }
     void bogo_sorter(vector<int> &unsorted) // Use it for small arrays otherwise you will have to wait more
@@ -143,6 +153,9 @@ namespace sorter
         while (!isSorted(unsorted))
         {
             shuffler(unsorted, unsorted.size());
+            system("cls");
+            animator::animate(unsorted);
+            Sleep(1000);
         }
     }
 }
