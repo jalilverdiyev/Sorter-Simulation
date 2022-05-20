@@ -78,6 +78,19 @@ algorithm_choose:
         goto algorithm_choose;
         break;
     case 'n':
+        char choicee;
+        cout << "To return back enter 'r' or to leave enter 'l': ";
+        cin >> choicee;
+        switch (tolower(choicee))
+        {        case 'r':
+            main();
+            break;
+        case 'l':
+            break;
+        default:
+            cout << "Err wrong input" << endl;
+            break;
+        }
         break;
     default:
         break;
