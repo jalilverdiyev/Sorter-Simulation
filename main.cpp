@@ -59,6 +59,10 @@ algorithm_choose:
         break;
     case 5:
         sorter::bogo_sorter(tobe_sorted);
+        for(int i=0;i<unsorted.size();i++)
+        {
+            cout<<unsorted[i]<<endl;
+        }
         break;
     default:
         cout << "Wrong input choose correct" << endl;
