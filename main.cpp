@@ -1,5 +1,13 @@
 #include <bits/stdc++.h>
-#include <windows.h>
+#ifdef _WIN32
+#include <Windows.h>
+#define sleep(x) Sleep(x)
+#define clear system("cls")
+#else
+#include <unistd.h>
+#define sleep(x) usleep(x)
+#define clear system("clear")
+#endif
 #include "sorters.hpp"
 
 using namespace std;
@@ -59,15 +67,15 @@ algorithm_choose:
         break;
     case 5:
         sorter::bogo_sorter(tobe_sorted);
-        for(int i=0;i<unsorted.size();i++)
+        for (int i = 0; i < unsorted.size(); i++)
         {
-            cout<<unsorted[i]<<endl;
+            cout << unsorted[i] << endl;
         }
         break;
     default:
         cout << "Wrong input choose correct" << endl;
-        Sleep(300);
-        system("cls");
+        sleep(300);
+        clear;
         goto algorithm_choose;
         break;
     }
@@ -77,8 +85,8 @@ algorithm_choose:
     switch (tolower(again))
     {
     case 'y':
-        Sleep(300);
-        system("cls");
+        sleep(300);
+        clear;
         goto algorithm_choose;
         break;
     case 'n':
@@ -86,7 +94,8 @@ algorithm_choose:
         cout << "To return back enter 'r' or to leave enter 'l': ";
         cin >> choicee;
         switch (tolower(choicee))
-        {        case 'r':
+        {
+        case 'r':
             main();
             break;
         case 'l':
@@ -104,20 +113,20 @@ algorithm_choose:
 int main()
 {
     int f_choice;
-    system("cls");
+    clear;
     cout << "<<<<<<<<<<<<<<<<<<Welcome To Sorter Program>>>>>>>>>>>>>>>>>>" << endl;
     cout << "Main menu:\n1->About\n2->Sort" << endl;
     cin >> f_choice;
     switch (f_choice)
     {
     case 1:
-        Sleep(500);
-        system("cls");
+        sleep(500);
+        clear;
         about();
         break;
     case 2:
-        Sleep(500);
-        system("cls");
+        sleep(500);
+        clear;
         sort();
         break;
     default:

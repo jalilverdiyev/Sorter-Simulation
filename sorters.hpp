@@ -1,8 +1,16 @@
 #include "animator.hpp"
+#include <bits/stdc++.h>
+#ifdef _WIN32
+#include <Windows.h>
+#define sleep(x) Sleep(x)
+#define clear system("cls")
+#else
+#include <unistd.h>
+#define sleep(x) usleep(x)
+#define clear system("clear")
+#endif
 namespace sorter
 {
-#include <bits/stdc++.h>
-#include <windows.h>
     using namespace std;
     namespace
     {
@@ -93,9 +101,9 @@ namespace sorter
                 {
                     swap(unsorted[pos], unsorted[j]);
                 }
-                system("cls");
+                clear;
                 animator::animate(unsorted);
-                Sleep(500);
+                sleep(2000);
             }
         }
     }
@@ -105,9 +113,9 @@ namespace sorter
         for (int i = 0; i < (unsorted.size() - 1); i++)
         {
             int min = i;
-            system("cls");
+            clear;
             animator::animate(unsorted);
-            Sleep(500);
+            sleep(2000);
             for (int j = i + 1; j < unsorted.size(); j++)
             {
                 if (unsorted[j] < unsorted[min])
@@ -117,7 +125,7 @@ namespace sorter
             }
             swap(unsorted[min], unsorted[i]);
         }
-        system("cls");
+        clear;
         animator::animate(unsorted);
         return unsorted;
     }
@@ -127,9 +135,9 @@ namespace sorter
         if (start < end)
         {
             int pi = partitions(unsorted, start, end);
-            system("cls");
+            clear;
             animator::animate(unsorted);
-            Sleep(1000);
+            sleep(4000);
             quick_sorter(unsorted, start, pi - 1);
             quick_sorter(unsorted, pi + 1, end);
         }
@@ -143,9 +151,9 @@ namespace sorter
             merge_sorter(unsorted, begin, mid);
             merge_sorter(unsorted, mid + 1, end);
             merge(unsorted, begin, mid, end);
-            system("cls");
+            clear;
             animator::animate(unsorted);
-            Sleep(1000);
+            sleep(4000);
         }
     }
     void bogo_sorter(vector<int> &unsorted) // Use it for small arrays otherwise you will have to wait more
@@ -153,9 +161,9 @@ namespace sorter
         while (!isSorted(unsorted))
         {
             shuffler(unsorted, unsorted.size());
-            system("cls");
+            clear;
             animator::animate(unsorted);
-            Sleep(1000);
+            sleep(4000);
         }
     }
 }

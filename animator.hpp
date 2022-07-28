@@ -1,19 +1,18 @@
-
-namespace animator
-{
 #include <bits/stdc++.h>
 #include <cmath>
+namespace animator
+{
     using namespace std;
     void animate(vector<int> arr)
     {
-        string top_left_corner(arr.size(), 201);
-        string top(arr.size(), 205);
-        string top_right_corner(arr.size(), 187);
-        string mid_left(arr.size(), 186);
-        string mid_right(arr.size(), 186);
-        string bottom_left_corner(arr.size(), 200);
-        string bottom(arr.size(), 205);
-        string bottom_right_corner(arr.size(), 188);
+        string top_left_corner(arr.size(), '*');
+        string top(arr.size(), '*');
+        string top_right_corner(arr.size(), '*');
+        string mid_left(arr.size(), '*');
+        string mid_right(arr.size(), '*');
+        string bottom_left_corner(arr.size(), '*');
+        string bottom(arr.size(), '*');
+        string bottom_right_corner(arr.size(), '*');
 
         for (int i = 0; i < arr.size(); i++)
         {
